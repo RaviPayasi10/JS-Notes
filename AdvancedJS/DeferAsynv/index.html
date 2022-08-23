@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <li>1</li>
+    <script src="app.js"></script>
+    <!-- <script src="app.js"></script> o/p => 1,2,3 (normal)-->
+    <!-- <script defer src="app.js"></script>     o/p => 1,3,2-->
+    <!-- <script async src="app.js"></script>  o/p => 1,3,2 -->
+
+    
+    <!-- Since script file is blocking in nature normally, after rendering list item 1
+    it will stop the UI rendering of 3, it will first load and execute the script file
+    and after that completes, it will render the 3rd list item. 
+    This is not optimal as it will make UI uninteractive
+
+    To prevent this, we can use two attributes called Async and Defer.
+
+    ASYNC - If this attribute is used, the fetching of script will be done
+    asynchronously/parallely with html parsing. After fetching is complete,
+    then it start execution of script. This execution of script is still 
+    blocking in nature, so it will pause the parsing of html file and first
+    execute the script, after execution it will resume the parsing of html file.
+
+    Order of execution for Async - If multiple script files are there, async will not
+    maintain any order for their execution. Any file can executed before any other file
+    depending upon their completion.
+
+    DEFER - In this, fetching of script file will be done parallely with parsing
+    of html file. Then after the parsing of html is complete, then it will start
+    executing the script file.
+    So, it parses parallely but executes after html is completely parsed.
+    Order of execution - If multiple script files are present, then defer maintains
+    the order of execution of files in the order in which they are called.
+    -->
+    <li>3</li>
+
+</body>
+</html>

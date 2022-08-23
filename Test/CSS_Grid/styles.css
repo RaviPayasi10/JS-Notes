@@ -1,0 +1,25 @@
+
+*{
+    /* background-color: red; */
+
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: 30% 30% 40%;
+
+    /* Both properties below have same effect as single gap property when the gap is
+    same for row and columns both */
+    /* column-gap: 0.5em; */ 
+    /* row-gap: 0.5em; */
+    gap: 0.5em;
+}
+
+.grid > div {
+    padding: 5px;
+    background-color: #eee;
+}
+
+.grid > div:nth-child(odd){
+    background-color: #ddd;
+}
